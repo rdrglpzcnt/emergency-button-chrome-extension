@@ -1,0 +1,48 @@
+:root {
+  --dangerColor: crimson;
+  --dangerColorHover: darkred;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+.content {
+  width: 400px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+#emergencyButton {
+  appearance: none;
+  height: 52px;
+  width: 250px;
+  font-weight: 600;
+  background-color: var(--dangerColor);
+  color: white;
+  border-radius: 32px;
+  transition: all;
+  transition-duration: 300ms;
+  border: solid 1px var(--dangerColor);
+}
+
+#emergencyButton:hover {
+  background-color: var(--dangerColorHover);
+  border-color: var(--dangerColorHover);
+}
+
+#processInfo {
+  text-align: center;
+  font-weight: 400;
+}
+
+
+.hidden {
+  display: none;
+}
+
+#successText {
+  font-size: larger;
+  font-weight: 700;
+  color: forestgreen;
+}
