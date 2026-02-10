@@ -1,6 +1,6 @@
 {
   "name": "Emergency Button",
-  "Description": "Extensión que elimina tu historial de sitios compremetedores para que tus jefes no te descubran",
+  "Description": "Delete your compromising chrome history in one click so your boss wont fire you.",
   "version": "0.1",
   "manifest_version": 3,
   "action": {

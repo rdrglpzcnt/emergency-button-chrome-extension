@@ -2,11 +2,18 @@
   --dangerColor: crimson;
   --dangerColorHover: darkred;
 }
+
 body {
+  background-color: darkslategrey;
   font-family: Helvetica, Arial, sans-serif;
 }
+
+p {
+  margin: 0;
+}
+
 .content {
-  width: 400px;
+  width: 300px;
 }
 
 .button-container {
@@ -20,7 +27,7 @@ body {
   font-weight: 600;
   background-color: var(--dangerColor);
   color: white;
-  border-radius: 32px;
+  border-radius: 5px;
   transition: all;
   transition-duration: 300ms;
   border: solid 1px var(--dangerColor);

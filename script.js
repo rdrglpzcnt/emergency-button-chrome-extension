@@ -1,159 +1,159 @@
 const sites = {
   socialMedia: [
-    'facebook',
-    'tiktok',
-    'reddit',
-    'x.com',
-    'twitter',
-    'instagram',
-    'snapchat',
-    'threads',
-    'tumblr',
-    'discord',
-    'telegram',
-    'pinterest',
     '4chan',
-    'whatsapp',
-    'wa.me',
     'beReal',
-    'mastodon',
-    'signal',
+    'discord',
+    'facebook',
+    'instagram',
     'line',
-    'viber'
+    'mastodon',
+    'pinterest',
+    'reddit',
+    'signal',
+    'snapchat',
+    'telegram',
+    'threads',
+    'tiktok',
+    'tumblr',
+    'twitter',
+    'viber',
+    'wa.me',
+    'whatsapp',
+    'x.com',
   ],
   video: [
-    'youtube',
-    'netflix',
-    'primevideo',
-    'hbomax',
-    'disneyplus',
-    'paramountplus',
     'appletv',
-    'crunchyroll',
-    'funimation',
-    'twitch',
-    'kick',
-    'vimeo',
-    'dailymotion',
-    'pluto.tv',
-    'tubitv',
-    'plex',
-    'roku',
-    'vudu',
-    'fubo',
-    'hulu',
-    'peacock',
-    'starplus',
-    'viu',
-    'iqiyi',
-    'weTV',
     'bilibili',
-    'niconico',
-    'kickstarter/live',
+    'crunchyroll',
+    'dailymotion',
+    'disneyplus',
     'facebookwatch',
+    'fubo',
+    'funimation',
+    'hbomax',
+    'hulu',
+    'iqiyi',
+    'kick',
+    'kickstarter/live',
+    'netflix',
+    'niconico',
+    'paramountplus',
+    'peacock',
+    'plex',
+    'pluto.tv',
+    'primevideo',
+    'roku',
+    'starplus',
+    'tubitv',
+    'twitch',
+    'vimeo',
+    'viu',
+    'vudu',
+    'weTV',
+    'youtube',
   ],
   nsfw: [
-    'pornhub',
-    'xvideos',
-    'xnxx',
-    'onlyfans',
-    'fansly',
-    'redtube',
-    'youporn',
-    'brazzers',
     'bangbros',
-    'naughtyamerica',
-    'realitykings',
-    'tushy',
-    'vivid',
-    'playboy',
-    'hustler',
-    'spankbang',
     'beeg',
-    'motherless',
+    'brazzers',
     'cam4',
     'chaturbate',
-    'stripchat',
-    'livejasmin',
-    'myfreecams',
+    'eporner',
     'erome',
+    'fansly',
     'fapello',
     'fapvid',
-    'eporner',
+    'hustler',
+    'livejasmin',
+    'motherless',
+    'myfreecams',
+    'naughtyamerica',
+    'onlyfans',
+    'playboy',
+    'pornhub',
     'porntrex',
-    'xhamster'
+    'realitykings',
+    'redtube',
+    'spankbang',
+    'stripchat',
+    'tushy',
+    'vivid',
+    'xhamster',
+    'xnxx',
+    'xvideos',
+    'youporn',
   ],
   shopping: [
-    'mercadolibre',
-    'amazon',
     'aliexpress',
-    'shein',
-    'temu',
+    'amazon',
+    'bestbuy',
+    'costco',
     'ebay',
     'etsy',
-    'wish',
-    'walmart',
-    'target',
-    'costco',
     'linio',
-    'bestbuy',
-    'newegg'
+    'mercadolibre',
+    'newegg',
+    'shein',
+    'target',
+    'temu',
+    'walmart',
+    'wish',
   ],
   memesAndTimeWasters: [
     '9gag',
-    'imgur',
-    'knowyourmeme',
     'boredpanda',
     'cheezburger',
+    'imgur',
+    'knowyourmeme',
+    'memedroid',
     'thechive',
-    'memedroid'
   ],
   sportsAndStreaming: [
-    'nfl',
-    'nhl',
-    'nba',
-    'mlb',
-    'ufc',
+    'espn',
     'f1',
     'formula1',
+    'foxsports',
     'laliga',
-    'premierleague',
     'ligamx',
-    'espn',
-    'foxsports'
+    'mlb',
+    'nba',
+    'nfl',
+    'nhl',
+    'premierleague',
+    'ufc',
   ],
   bettingAndCasino: [
-    'caliente',
-    'bet365',
-    'codere',
     '1xbet',
+    '888casino',
+    'bet365',
     'betfair',
+    'caliente.mx',
+    'caliente',
     'casino',
+    'codere',
     'poker',
     'pokerstars',
-    '888casino',
-    'caliente.mx'
   ],
   gaming: [
-    'steam',
-    'epicgames',
     'battle.net',
-    'riotgames',
+    'epicgames',
     'leagueoflegends',
-    'valorant',
     'minecraft',
-    'roblox',
     'playstation',
-    'xbox'
+    'riotgames',
+    'roblox',
+    'steam',
+    'valorant',
+    'xbox',
   ],
   random: [
-    'omegle',
-    'ome.tv',
-    'tinder',
     'bumble',
-    'okcupid',
     'chatroulette',
-    'forocoches'
+    'forocoches',
+    'okcupid',
+    'ome.tv',
+    'omegle',
+    'tinder',
   ]
 };
 
@@ -161,7 +161,7 @@ const emergencyButton = document.getElementById('emergencyButton');
 const waitingIcon = document.getElementById('waitingIcon');
 const successText = document.getElementById('successText');
 
-function getHistoryItemsPromise(searchTerm) {
+function getSearchPromise(searchTerm) {
   return () => new Promise(function (resolve) {
     chrome.history.search({
       text: searchTerm,
@@ -169,6 +169,7 @@ function getHistoryItemsPromise(searchTerm) {
       endTime: Date.now(),
       maxResults: 10000
     }, function(items) {
+      console.log({searchTerm, items})
       if (searchTerm === 'x.com') {
         resolve(items.filter(i => i.url.match('https://x.com')))
       } else {
@@ -178,7 +179,7 @@ function getHistoryItemsPromise(searchTerm) {
   })
 }
 
-function getHistoryItemDeletePromise(historyItem) {
+function getDeletePromise(historyItem) {
   return () => new Promise(function (resolve) {
     chrome.history.deleteUrl({
       url: historyItem.url
@@ -189,7 +190,7 @@ function getHistoryItemDeletePromise(historyItem) {
 }
 
 function onSuccess() {
-  successText.innerText = `Estás limpio 🥷🏻`
+  successText.innerText = `👍🏻`
   waitingIcon.classList.add('hidden')
 }
 
@@ -202,7 +203,7 @@ function handleEmergencyButton() {
   for (const key in sites) {
     const group = sites[key];
     group.forEach(element => {
-      searchPromises.push(getHistoryItemsPromise(element))
+      searchPromises.push(getSearchPromise(element))
     });
   }
   
@@ -211,12 +212,9 @@ function handleEmergencyButton() {
       const deletePromises = []
       const historyItems = [].concat(...results.map(r => r.value))
       if (historyItems.length) {
-        historyItems.forEach(item => {
-          deletePromises.push(getHistoryItemDeletePromise(item))
-        })
-        Promise.allSettled(deletePromises.map(fn => fn())).then(() => {
-          onSuccess()
-        })
+        historyItems.forEach(item => deletePromises.push(getDeletePromise(item)))
+        Promise.allSettled(deletePromises.map(fn => fn()))
+          .then(onSuccess)
       } else {
         onSuccess()
       }
